@@ -51,8 +51,8 @@ function cache(){
         }
     })
 }
-
-app.get('/repos/:username', getRepos)
+//using cache on app.get will get the caching function first
+app.get('/repos/:username', cache, getRepos)
 
 app.listen(5000, () => {
     console.log('server running')
